@@ -12,99 +12,71 @@ describe("Header", () => {
         expect(h1Element).toBeInTheDocument();
     });
 
-    // it("checking out if there is no word" , () => {
-    //     render(<Header title = "todo"/>)
-    //     const testHeader = screen.getByRole("heading")
-    //     expect(testHeader).toBeInTheDocument()
-    // })
+  })
+
+    it("checking out if there is no word" , () => {
+        render(<Header title = "todo"/>)
+        const testHeader = screen.getByRole("heading")
+        expect(testHeader).toBeInTheDocument()
+    })
 
     
-//      it('checking for the header' , async() => {
-//        render(<Header title = "todo"/>);
-//        const testHeader2 = screen.getByRole("heading" , {name: "todo"})
-//        expect(testHeader2).toBeInTheDocument();
-//      })
-// })
 
-//     it("checking for the header" , () => {
-//         render(<Header title="My Header"/>);
-//         const testHeader2 = screen.getByRole("heading" , {name: "My Header"})
-//         expect(testHeader2).toBeInTheDocument()
-//     })
-// })
 
-// it('should render same text passed into title prop', () => {
-//     render(
-//         <Header 
-//           title="todo"
-//         />
-//     );
-//     const h1Element = screen.getByRole("heading");
-//     expect(h1Element).toBeInTheDocument();
-// });
 
-// it('should render same text passed into title prop', () => {
-//     render(
-//         <Header 
-//           title="todo"
-//         />
-//     );
-//     const h1Element = screen.getByRole("heading", { name: /todo/i });
-//     expect(h1Element).toBeInTheDocument();
-// });
 
-// it('should render same text passed into title prop', () => {
-//     render(
-//         <Header 
-//           title="todo"
-//         />
-//     );
-//     const h1Element = screen.getByTitle("Header");
-//     expect(h1Element).toBeInTheDocument();
-// });
+it('should render same text passed into title prop', () => {
+    render(
+        <Header 
+          title="todo"
+        />
+    );
+    const h1Element = screen.getByTitle("Header");
+    expect(h1Element).toBeInTheDocument();
+});
 
-// it('should render same text passed into title prop', () => {
-//     render(
-//         <Header 
-//           title="todo"
-//         />
-//     );
-//     const h2Element = screen.getByTestId("header-2");
-//     expect(h2Element).toBeInTheDocument();
-// });
+it('should render same text passed into title props', () => {
+    render(
+        <Header 
+          title="todo"
+        />
+    );
+    const h2Element = screen.getByTestId("header-2");
+    expect(h2Element).toBeInTheDocument();
+});
 
-// // WITH FINDBY
+// WITH FINDBY
 
-// it('should render same text passed into title prop', async () => {
-//     render(
-//         <Header 
-//           title="todo"
-//         />
-//     );
-//     const h1Element = await screen.findByText(/todo/i);
-//     expect(h1Element).toBeInTheDocument();
-// });
+it('should render same text passed into find by', async () => {
+    render(
+        <Header 
+          title="todo"
+        />
+    );
+    const h1Element = await screen.findByText(/todo/i);
+    expect(h1Element).toBeInTheDocument();
+});
 
-// // WITH QUERYBY
+// WITH QUERYBY
 
-// it('should render same text passed into title prop', () => {
-//     render(
-//         <Header 
-//           title="todo"
-//         />
-//     );
-//     const h1Element = screen.queryByText(/dogs/i);
-//     expect(h1Element).not.toBeInTheDocument
-// });
+it('should render same text passed into title prop query by', () => {
+    render(
+        <Header 
+          title="todo"
+        />
+    );
+    const h1Element = screen.queryByText(/dogs/i);
+    expect(h1Element).not.toBeInTheDocument()
+});
 
-// // WITH GETALLBY
+// WITH GETALLBY
 
-// it('should render same text passed into title prop', () => {
-//     render(
-//         <Header 
-//           title="todo"
-//         />
-//     );
-//     const h1Elements = screen.getAllByText(/todo/i);
-//     expect(h1Elements.length).toBe(1);
-// })
+it('should render same text passed into title get all', () => {
+    render(
+        <Header 
+          title="todo"
+        />
+    );
+    const h1Elements = screen.getAllByText(/todo/i);
+    expect(h1Elements.length).toBe(1);
+})
